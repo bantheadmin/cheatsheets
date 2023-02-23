@@ -1,0 +1,63 @@
+---
+tags: [ php, packaging ]
+---
+
+# To download and install all the libraries and dependencies outlined in the composer.lock file
+# If the file does not exist it will look for composer.json and do the same, creating a composer.lock file
+composer install
+
+# To simulate the install without installing anything (creates composer.lock if not present)
+composer install --dry-run
+
+# To update all packages
+composer update
+
+# To update all packages and their dependencies
+composer update --with-dependencies
+
+# To updates a certain package from vendor
+composer update vendor/package
+
+# To update all packages from vendor
+composer update vendor/*
+
+# To update composer.lock hash without updating any packages
+composer update --lock
+
+# To generate optimized autoload files
+composer dumpautoload -o
+
+# To add package from vendor to composer.json's require section and install it
+composer require vendor/package
+
+# To add package from vendor to composer.json's require-dev section and install it
+# This command changes both the composer.json and composer.lock files
+composer require vendor/package --dev
+
+# To install version 1.3.2 of a package
+composer require vendor/pkg "1.3.2"
+
+# To install above or equal to version 1.3.2 of a package with no other restriction
+composer require vendor/pkg ">=1.3.2"
+
+# To install the latest version 1.3.x of a package (>=1.3.0 <1.4.0)
+composer require vendor/pkg "1.3.*"
+
+# To install above or equal to 1.3.2 (>=1.3.2 <1.4.0)
+composer require vendor/pkg "~1.3.2"
+
+# To install above or equal to 1.3.x (>=1.3.0 <2.0.0)
+composer require vendor/pkg "~1.3"
+
+# To install the latest of >=0.3.0 <0.4.0 (for pre-1.0)
+composer require vendor/pkg "^0.3.2"
+
+#To install from the branch BRANCH_NAME
+composer require vendor/pkg "dev-BRANCH_NAME"
+
+# To remove vendor/package from composer.json and uninstall it
+# Changes both the composer.json and composer.lock files
+composer remove vendor/package
+
+# To show only packages that are outdated directly required by the root package
+composer outdated --direct
