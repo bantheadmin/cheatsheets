@@ -1,0 +1,39 @@
+---
+tags: [ cms, drupal ]
+---
+
+# To apply any database updates required (as with running update.php)
+drush updatedb
+drush updb
+
+# To apply any database updates required, debug output
+drush updatedb -vvv
+
+# To list any pending database updates
+drush updatedb:status
+drush updbst
+
+# To display an overview of the environment - Drush and Drupal
+drush core:status
+drush status
+drush st
+
+# To run all cron hooks in all active modules for specified site
+drush core:cron
+drush cron
+
+# To edit drush.yml, site alias, and Drupal settings.php files
+drush core:edit
+drush config
+drush conf
+
+# To display status of configuration (differences between the filesystem configuration and database configuration)
+drush config:status
+
+# To rebuild all caches
+drush cache:rebuild
+drush cr
+
+# To clear a specific cache or all caches
+drush cache:clear
+drush cc
